@@ -1,4 +1,5 @@
-@foreach ($task as tasks)
-    <li>{{ $task->id }} - {{ $task->title }} - {{$task->create_at}}</li> 
-        {{  }} {{  }}    
+@foreach ($tasks as $task)
+<ul>
+    <li>{{ $task->id }} - {{ $task->titre }} - </li> 
+</ul>        
 @endforeach

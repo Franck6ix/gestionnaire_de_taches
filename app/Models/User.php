@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function Taks() // Relation entre user et taks (un user peut avoir plusieurs taks)
     {
-        return $this->hasMany(Taks::class);
+        return $this->hasMany(Task::class);
     }
 }

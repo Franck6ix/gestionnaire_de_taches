@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -12,12 +13,15 @@ class TaskController extends Controller
      */
     public function index()
     {
-        // Récupérer la liste des taches.
-        // Récupérer la liste des taches.
-        $tasks = Task::All();
+        // Récupérer la liste de toutes les taches.
+        //$tasks = Task::all();
+        
+        // Récupérer la liste des taches avec user SPECIFIQUE.
+        $tasks = Task::where('user_id', Auth::id())->get();
+              
         // Verification si le code génère une erreur (débuguer).
         //dd($tasks);
-        //$catogories = Category::All();
+
         return view('index', compact('tasks'));
     }
 
